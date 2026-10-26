@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mini Golf — Pro</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#1a3a2a">
+</head>
+<body>
+  <div id="loading">
+    <div class="logo">⛳</div>
+    <div class="spinner"></div>
+    <p>Loading course...</p>
+  </div>
+
+  <div id="menu" class="screen active">
+    <div class="menu-bg"></div>
+    <div class="menu-card">
+      <div class="logo-big">⛳</div>
+      <h1>MINI GOLF</h1>
+      <p class="tag">9 Holes · Precision Putting</p>
+      <div class="menu-buttons">
+        <button id="btn-play" class="btn primary">PLAY</button>
+        <button id="btn-how" class="btn">HOW TO PLAY</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="howto" class="screen">
+    <div class="menu-card">
+      <h2>How to Play</h2>
+      <div class="how-list">
+        <p><strong>Drag</strong> on the screen to aim. A line shows direction and power.</p>
+        <p><strong>Release</strong> to hit the ball.</p>
+        <p>Get the ball in the hole in as few strokes as possible.</p>
+      </div>
+      <button class="btn back" data-back="menu">BACK</button>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div class="hud-left">
+      <div class="hud-item">Hole <b id="hole-num">1</b>/9</div>
+      <div class="hud-item">Par <b id="par">3</b></div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-item strokes">Strokes <b id="strokes">0</b></div>
+      <div class="hud-item total">Total <b id="total">0</b></div>
+    </div>
+  </div>
+
+  <div id="aim-line"></div>
+
+  <div id="power-meter">
+    <div class="power-label">POWER</div>
+    <div class="power-track"><div id="power-fill"></div></div>
+  </div>
+
+  <div id="complete" class="screen">
+    <div class="menu-card">
+      <h2 id="complete-title">Hole Complete</h2>
+      <p id="complete-text"></p>
+      <button id="btn-next" class="btn primary">NEXT HOLE</button>
+    </div>
+  </div>
+
+  <canvas id="canvas"></canvas>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
